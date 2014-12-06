@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sumarkdown by suemi994</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Sumarkdown</h1>
+        <p>JS-based powerful markdown editor which can be embedded in html easily.</p>
+        <p class="view"><a href="https://github.com/suemi994/suMarkdown">View the Project on GitHub <small>suemi994/suMarkdown</small></a></p>
+        <ul>
+          <li><a href="https://github.com/suemi994/suMarkdown/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/suemi994/suMarkdown/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/suemi994/suMarkdown">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a id="the-js-based-markdown-editor-with-all-you-need-comes" class="anchor" href="#the-js-based-markdown-editor-with-all-you-need-comes" aria-hidden="true"><span class="octicon octicon-link"></span></a>The JS-based Markdown Editor With All You Need Comes</h3>
+
+<p>SuMarkdown is designed to be easily embedded in your html page.All you need to do is to add our one js file with several dependency plugins to your page and write several lines of javascript code. Compared to Bootstrap-Markdown, we remove some useless function and provide multi-line code and code highlight, important to pragrammers.At the same time we provide a basic theme based on bootstrap which is simple but looks nice.However, it's easy for you to change its UI as your will through CSS and other tools. </p>
+
+<h3>
+<a id="what-we-provide" class="anchor" href="#what-we-provide" aria-hidden="true"><span class="octicon octicon-link"></span></a>What We Provide</h3>
+
+<ul>
+<li>
+<strong>a toolbar</strong> includes most of your need--Bold,Italic,Link,Image,Code,Quote,Header,List and OrderList</li>
+<li>
+<strong>hot-keys</strong> doing all what you can do through the toolbar</li>
+<li>
+<strong>multi-line code</strong> can be present perfectly</li>
+<li>
+<strong>code highlight</strong> based on different languages</li>
+<li><strong>enabled tab-indent in editor</strong></li>
+<li>two methods to use our editor-- Ajax load or add the theme code to your html</li>
+<li>two modes--real-time effect presented and click button to preview</li>
+<li>a simple theme which looks acceptable</li>
+</ul>
+
+<h3>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
+
+<h3>
+<a id="dependency" class="anchor" href="#dependency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependency</h3>
+
+<ul>
+<li>jQuery Framework</li>
+<li>highlight.js</li>
+<li>marked.js</li>
+<li>the basic theme we provide depends on bootstrap, you can rewrite it to discard bootstrap</li>
+</ul>
+
+<p>Though you can get them easily, we provide it in the lib directory when you download SuMarkdown.
+It depends on you to get the newest version or just use ours.</p>
+
+<h3>
+<a id="the-usage" class="anchor" href="#the-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Usage</h3>
+
+<h4>
+<a id="simple-way----add-elements-with-special-class-names" class="anchor" href="#simple-way----add-elements-with-special-class-names" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Way -- add elements with special class names</h4>
+
+<p>code example followed
+First,add our dependency files and our suMarkdown.js.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s1"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/highlight/styles/default.css<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/jquery/dist/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/highlight/highlight.pack.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s2">&lt;<span class="pl-ent">script</span>&gt;hljs.initHighlightingOnLoad();&lt;/<span class="pl-ent">script</span>&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/marked/marked.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>js/suMarkdown.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>Second, add the DOM of our editor, you can just copy the code in the /theme/basic.html file, <strong>which is recommended by us</strong>.You can also write it yourself. But please <strong>don't forget the class names that begin
+with su</strong>.
+Then we add several lines of javascript code to our html.</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-st">function</span>(){
+            <span class="pl-s">var</span> option<span class="pl-k">=</span>{
+                target<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">'</span>.suMarkdown<span class="pl-pds">'</span></span>,
+                preview<span class="pl-k">:</span><span class="pl-c1">true</span>,
+            };
+            SuMarkdown(option);
+        });</pre></div>
+
+<p>The parameter of option will be explained later.</p>
+
+<h4>
+<a id="ajax-load-way" class="anchor" href="#ajax-load-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>AJAX Load Way</h4>
+
+<p>First, the dependency files as before.
+Then you should add a handler for the server side to send theme file.
+We give an example use express.</p>
+
+<div class="highlight highlight-javascript"><pre>app.get(<span class="pl-s1"><span class="pl-pds">'</span>/suMarkdown/theme/basic<span class="pl-pds">'</span></span>,<span class="pl-st">function</span>(<span class="pl-vpf">req</span>,<span class="pl-vpf">res</span>){
+    res.sendFile(<span class="pl-sv">__dirname</span><span class="pl-k">+</span><span class="pl-s1"><span class="pl-pds">'</span>/public/suMarkdown/theme/basic.html<span class="pl-pds">'</span></span>);
+});</pre></div>
+
+<p>Then add the code below to your html.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> option<span class="pl-k">=</span>{
+    target<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">'</span>.suMarkdown<span class="pl-pds">'</span></span>,
+    insert<span class="pl-k">:</span><span class="pl-c1">true</span>
+};
+$(<span class="pl-st">function</span>(){
+    SuMarkdown(option);
+});</pre></div>
+
+<p>It will append our editor to the DOM element with class-name 'suMarkdown'.</p>
+
+<h4>
+<a id="parameter-explanation" class="anchor" href="#parameter-explanation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameter Explanation</h4>
+
+<table>
+<thead>
+<tr>
+<th>Option Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>insert</code></td>
+<td><code>boolean</code></td>
+<td>
+<code>true</code>: ajax load way, <code>false</code> : simple way, <code>default</code>: false</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><code>String,DOM Element,JQuery Object</code></td>
+<td>
+<code>css selector grammar</code> as <code>String</code> , the element it selects will wrap our editor, <code>default</code>:<code>'.suMarkdown'</code>
+</td>
+</tr>
+<tr>
+<td><code>preview</code></td>
+<td><code>boolean</code></td>
+<td>
+<code>true</code>:the real-time effect mode,you will have a preview box along side to see the effect, <code>false</code>:the button-preview mode, you will have to click the preview button to see the effect</td>
+</tr>
+<tr>
+<td><code>textHeight</code></td>
+<td><code>String</code></td>
+<td>Set the height of text area and preview area of our editor, you can use <code>"500px"</code>,<code>"20%"</code> and so on, or you can set this just through css outside</td>
+</tr>
+<tr>
+<td><code>clean</code></td>
+<td><code>boolean</code></td>
+<td>
+<code>true</code>:the editor will be initialized simply in UI, <code>false</code>:will not, <code>default</code>:true, we recommend not to change it</td>
+</tr>
+<tr>
+<td><code>CSS</code></td>
+<td><code>Object</code></td>
+<td>initialize the editor as your will</td>
+</tr>
+<tr>
+<td><code>textCss</code></td>
+<td><code>Object</code></td>
+<td>more detaily initialize the CSS of text area of editor as your will</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="other-examples" class="anchor" href="#other-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Examples</h3>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/suemi994">suemi994</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
