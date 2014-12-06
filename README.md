@@ -14,6 +14,10 @@ Author:suemi
 - two modes--real-time effect presented and click button to preview
 - easy to design your own UI
 
+###Directory Structure
+####lib--Where to our dependencies
+####theme--a basic template you can copy directly, hope you to add new themes
+####js--our core directory, the suMarkdown.js stays there
 
 
 ###[Demo&Document](http://suemi994.github.io/suMarkdown/), please click 
