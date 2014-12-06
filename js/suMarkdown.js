@@ -233,7 +233,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 73:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.italic();
@@ -241,7 +240,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 71:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.img();
@@ -249,7 +247,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 72:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.head();
@@ -257,7 +254,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 75:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.code();
@@ -265,7 +261,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 76:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.link();
@@ -273,7 +268,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 79:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.orderlist();
@@ -281,7 +275,6 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 81:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.block();
@@ -289,11 +282,10 @@ var SuMarkdown=function(option){
                    }
                    break;
                case 85:
-                   event.preventDefault();
                    tmp=$(this).attr('data-state');
                    if(tmp=='1') {
                        methods.list();
-                       event.preventDefault();
+                      event.preventDefault();
                    }
                    break;
 
