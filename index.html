@@ -19,12 +19,14 @@
  <!--   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> -->
     <script>
         var option1={
+            insert:true,
             preview:true,
             textHeight:"300px   ",
             baseUrl:'theme/default.html',
             target:'#editor1'
         };
         var option2={
+            insert:true,
             preview:false,
             textHeight:"250px",
             baseUrl:"theme/default.html",
@@ -150,97 +152,13 @@
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
 
 <div id="editor1" class="suMarkdown">
-    <div class="su-toolbar">
-        <div class="tool-block su-tool-bold" title="Bold(Ctrl+B)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-bold"></span>
-        </div>
-        <div class="tool-block su-tool-italic" title="Italic(Ctrl+I)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-italic"></span>
-        </div>
-        <div class="tool-block su-tool-head" title="Header(Ctrl+H)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-header"></span>
-        </div>
-        <div class="tool-block su-tool-link" title="Link(Ctrl+L)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-link"></span>
-        </div>
-        <div class="tool-block su-tool-img" title="Image(Ctrl+G)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-picture"></span>
-        </div>
-        <div class="tool-block su-tool-list" title="List(Ctrl+U)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-list"></span>
-        </div>
-        <div class="tool-block su-tool-orderlist" title="OrderList(Ctrl+O)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-th-list"></span>
-        </div>
-        <div class="tool-block su-tool-code" title="Code(Ctrl+K)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-asterisk"></span>
-        </div>
-        <div class="tool-block su-tool-block" title="Quote(Ctrl+Q)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-comment"></span>
-        </div>
 
-        <button class="btn btn-sm btn-primary pull-right su-tool-preview">
-            <span class="glyphicon glyphicon-search"></span>
-            Preview
-        </button>
-    </div>
-
-    <div class="suEditor">
-
-        <textarea ></textarea>
-
-    </div>
-    <div class="suPreview">
-
-    </div>
 
 </div>
           <br>
 <h4 id="hehe">&nbsp;</h4>
 <div id="editor2" class="suMarkdown">
-    <div class="su-toolbar">
-        <div class="tool-block su-tool-bold" title="Bold(Ctrl+B)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-bold"></span>
-        </div>
-        <div class="tool-block su-tool-italic" title="Italic(Ctrl+I)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-italic"></span>
-        </div>
-        <div class="tool-block su-tool-head" title="Header(Ctrl+H)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-header"></span>
-        </div>
-        <div class="tool-block su-tool-link" title="Link(Ctrl+L)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-link"></span>
-        </div>
-        <div class="tool-block su-tool-img" title="Image(Ctrl+G)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-picture"></span>
-        </div>
-        <div class="tool-block su-tool-list" title="List(Ctrl+U)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-list"></span>
-        </div>
-        <div class="tool-block su-tool-orderlist" title="OrderList(Ctrl+O)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-th-list"></span>
-        </div>
-        <div class="tool-block su-tool-code" title="Code(Ctrl+K)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-asterisk"></span>
-        </div>
-        <div class="tool-block su-tool-block" title="Quote(Ctrl+Q)" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-comment"></span>
-        </div>
 
-        <button class="btn btn-sm btn-primary pull-right su-tool-preview">
-            <span class="glyphicon glyphicon-search"></span>
-            Preview
-        </button>
-    </div>
-
-    <div class="suEditor">
-
-        <textarea ></textarea>
-
-    </div>
-    <div class="suPreview">
-
-    </div>
 </div>
 
 <br>
@@ -266,8 +184,8 @@ It depends on you to get the newest version or just use ours.</p>
 <h4>
 <a id="simple-way----add-elements-with-special-class-names" class="anchor" href="#simple-way----add-elements-with-special-class-names" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Way -- add elements with special class names</h4>
 
-<p>code example followed
-First,add our dependency files and our suMarkdown.js.</p>
+<p>code example followed</p>
+<p>First,add our dependency files and our suMarkdown.js.</p>
 
 <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s1"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/highlight/styles/default.css<span class="pl-pds">"</span></span>&gt;
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>lib/jquery/dist/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
@@ -373,8 +291,7 @@ $(<span class="pl-st">function</span>(){
 </tbody>
 </table>
 
-<h3>
-<a id="other-examples" class="anchor" href="#other-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Examples</h3>
+
       </section>
     </div>
     <footer>
