@@ -7,11 +7,39 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="lib/highlight/styles/default.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/highlight/highlight.pack.js"></script>
+    <script src="lib/marked/marked.js"></script>
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <script src="javascripts/suMarkdown.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <!--   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> -->
+    <script>
+        var option1={
+            preview:true,
+            insert:true,
+            textHeight:"300px   ",
+            baseUrl:'theme/default.html',
+            target:'#editor1'
+        };
+        var option2={
+            preview:false,
+            insert:true,
+            textHeight:"250px",
+            baseUrl:"theme/default.html",
+            target:"#editor2"
+        };
+       $(function(){
+           SuMarkdown(option1);
+           SuMarkdown(option2);
+           $("#editor1").css({
+             "height":"300px"
+           });
+       })
+    </script>
     <![endif]-->
   </head>
   <body>
@@ -37,7 +65,7 @@
 
 <ul>
 <li>
-<strong>a toolbar</strong> includes most of your need--Bold,Italic,Link,Image,Code,Quote,Header,List and OrderList</li>
+<strong>a toolbar</strong> including most of your need--Bold,Italic,Link,Image,Code,Quote,Header,List and OrderList</li>
 <li>
 <strong>hot-keys</strong> doing all what you can do through the toolbar</li>
 <li>
@@ -53,7 +81,20 @@
 <h3>
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
 
-<h3>
+<div id="editor1" class="suMarkdown">
+
+</div>
+          <br>
+<h4 id="hehe">&nbsp;</h4>
+<div id="editor2" class="suMarkdown">
+
+</div>
+
+<br>
+
+
+
+<h3 style="{margin-top: 30px}">
 <a id="dependency" class="anchor" href="#dependency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependency</h3>
 
 <ul>
@@ -154,6 +195,11 @@ $(<span class="pl-st">function</span>(){
 <td><code>textHeight</code></td>
 <td><code>String</code></td>
 <td>Set the height of text area and preview area of our editor, you can use <code>"500px"</code>,<code>"20%"</code> and so on, or you can set this just through css outside</td>
+</tr>
+<tr>
+    <td><code>baseUrl</code></td>
+    <td><code>String</code></td>
+    <td>the url to get theme file when in ajax load mode</td>
 </tr>
 <tr>
 <td><code>clean</code></td>
