@@ -9,14 +9,23 @@ Author:suemi
 ###Our Features
 Bold ones are the new features in version 0.0.2.
 - A toolbar including most of your need
+
 	1.**Multiple files upload and a progress bar when files are large enough**
+
 	2.**Full-screen edit**
+
 	3.**A help page for markdown grammar**
+
 	4.one line code
+	
 	5.Quickly add link
+
 	6.Italic,Bold,Quote and Header
+
 	7.Add images through urls
-	8.preview button 
+
+	8.preview button
+
 - **Drag images directly to add them to your article**
 - hot-keys doing all what you can do through the toolbar
 - multi-line code can be present perfectly
