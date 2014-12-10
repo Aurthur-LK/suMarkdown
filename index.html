@@ -22,106 +22,40 @@
         var option1={
             insert:true,
             preview:true,
-            textHeight:"300px   ",
+            height:"300px",
+            upload:'/upload',
             baseUrl:'theme/default.html',
             target:'#editor1'
         };
         var option2={
             insert:true,
             preview:false,
-            textHeight:"250px",
+            height:"250px",
+            upload:'/upload',
             baseUrl:"theme/default.html",
             target:"#editor2"
         };
        $(function(){
            SuMarkdown(option1);
            SuMarkdown(option2);
-           $("#editor1").css({
-             "height":"300px"
-           });
+
            $.get('examples/editor1.md',function(data){
                $('#editor1 textarea').val(data);
                $('#editor1 .suPreview').html(marked(data));
 
-           },'text');
-           $.get('examples/editor2.md',function(data){
-               $('#editor2 textarea').val(data);
+           },'text').done(function(){
+               $.get('examples/editor2.md',function(data){
+                   $('#editor2 textarea').val(data);
 
-           },'text');
+               },'text');
+           });
+
        })
     </script>
     <![endif]-->
   </head>
   <body>
-  <style>
 
-      .su-toolbar{
-          width:100%;
-          height:45px;
-          display: block;
-          background: #f5f5f5;
-          padding: 5px;
-          border: solid 1px;
-          border-color: #cccccc;
-      }
-      .su-toolbar .tool-block{
-          cursor: pointer;
-          display: block;
-          width:35px;
-          margin:0 1%;
-          height:35px;
-          float:left;
-          padding: 5px;
-      }
-      .su-toolbar .tool-block *{
-          left:20%;
-          top:20%;
-      }
-      .su-toolbar .tool-block:hover{
-          background: #00ffff;
-      }
-      .su-toolbar button{
-          margin-top:5px;
-      }
-
-      .suEditor{
-          width:50%;
-          float:left;
-          display: block;
-
-      }
-      .suEditor textarea{
-          width:100%;
-          height: 400px;
-          background: #f5f5f5;
-          tab-size: 4;
-          border:solid 1px;
-          border-top: none;
-          border-color: #cccccc;
-          padding: 20px;
-          resize: none;
-      }
-      .suEditor textarea:focus{
-          background: #fff;
-          border-color:#cccccc ;
-          outline: none;
-      }
-      .suPreview{
-          width:50%;
-          left:50%;
-          float:left;
-          background: #f5f5f5;
-          height: 400px;
-          display: block;
-          overflow: auto;
-          padding: 0 20px;
-          border-right: solid 1px;
-          border-bottom: solid 1px;
-          border-color: #cccccc;
-
-      }
-
-  </style>
 
   <div class="wrapper">
       <header>
@@ -138,7 +72,8 @@
         <h3>
 <a id="the-js-based-markdown-editor-with-all-you-need-comes" class="anchor" href="#the-js-based-markdown-editor-with-all-you-need-comes" aria-hidden="true"><span class="octicon octicon-link"></span></a>The JS-based Markdown Editor With All You Need Comes</h3>
 
-<p>SuMarkdown is designed to be easily embedded in your html page.All you need to do is to add our one js file with several dependency plugins to your page and write several lines of javascript code. Compared to Bootstrap-Markdown, we remove some useless function and provide multi-line code and code highlight, important to pragrammers.At the same time we provide a basic theme based on bootstrap which is simple but looks nice.However, it's easy for you to change its UI as your will through CSS and other tools. </p>
+<p>SuMarkdown is designed to be easily embedded in your html page.All you need to do is to add our one js file with several dependency plugins to your page and write several lines of javascript code. Compared to Bootstrap-Markdown, we provide multi-line code and code highlight, important to pragrammers.</p>
+ <p>   What's more, multiple files uploading with a progressbar and dragging images to textarea directly are supported in current version (0.0.2). At the same time we provide a basic theme based on bootstrap which is simple but looks nice.However, it's easy for you to change its UI as your will through CSS and other tools. </p>
 
 <h3>
 <a id="what-we-provide" class="anchor" href="#what-we-provide" aria-hidden="true"><span class="octicon octicon-link"></span></a>What We Provide</h3>
@@ -146,6 +81,23 @@
 <ul>
 <li>
 <strong>a toolbar</strong> including most of your need--Bold,Italic,Link,Image,Code,Quote,Header,List and OrderList</li>
+
+<li>
+    <strong>multiple files upload and a progressbar when files are large enough</strong>>
+</li>
+
+<li>
+    <strong>drag images directly to include them in your article</strong>
+</li>
+
+<li>
+    link to a help page for markdown freshers is provided, you can click the button in toolbar to read it
+</li>
+
+<li>
+    <strong>full screen is now available</strong>,you can enjoy writing without disturbs
+</li>
+
 <li>
 <strong>hot-keys</strong> doing all what you can do through the toolbar</li>
 <li>
@@ -160,6 +112,8 @@
 
 <h3>
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
+
+<p>we provide two examples to show you what SuMarkdown can do. However, since we don't have a real sever, you may not be able to experience the exciting file-upload and image-drag function. But we guarantee you that they can be done when you write the corresponding sever-side code as our guide.</p>
 
 <div id="editor1" class="suMarkdown">
 
@@ -190,7 +144,7 @@ It depends on you to get the newest version or just use ours.</p>
 
 <h3>
 <a id="the-usage" class="anchor" href="#the-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Usage</h3>
-
+<br>
 <h4>
 <a id="simple-way----add-elements-with-special-class-names" class="anchor" href="#simple-way----add-elements-with-special-class-names" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Way -- add elements with special class names</h4>
 
@@ -217,7 +171,7 @@ Then we add several lines of javascript code to our html.</p>
         });</pre></div>
 
 <p>The parameter of option will be explained later.</p>
-
+<br>
 <h4>
 <a id="ajax-load-way" class="anchor" href="#ajax-load-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>AJAX Load Way</h4>
 
@@ -240,6 +194,26 @@ $(<span class="pl-st">function</span>(){
 });</pre></div>
 
 <p>It will append our editor to the DOM element with class-name 'suMarkdown'.</p>
+
+<br>
+          <h4>
+              <a id="upload-function-added-in-new-version" class="anchor" href="#upload-function-added-in-new-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upload Function Added In New Version</h4>
+
+<p>Here we show how to enable the upload-relating function added in version 0.0.2. </p>
+<p>In the client-side it's simple, add a new option in your parameter. When you give the upload option a value,file-upload and image-drag are ready to be used. An example follows.</p>
+          <div><pre class="prettyprint"><code class="language-javascript hljs ">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>SuMarkdown({upload:<span class="hljs-string">'your url'</span>});})
+              });</code></pre></div>
+<p>And in the Sever-side,you should return a json object, in fact a json string, it has the following form.</p>
+
+
+<div><pre class="prettyprint"><code class="language-javascript hljs ">res.json({
+    success:<span class="hljs-literal">true</span>,<span class="hljs-comment">// indicate that the upload completes</span>
+    path:[<span class="hljs-string">'url1'</span>,<span class="hljs-string">'url2'</span>,..]<span class="hljs-comment">//a array of urls relate to your upload files</span>
+    });</code></pre></div>
+
+
+<p>SuMarkdown will add  links with default description same with the filenames you upload. For images, the same. Is this awesome?</p>
+<br>
 
 <h4>
 <a id="parameter-explanation" class="anchor" href="#parameter-explanation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameter Explanation</h4>
@@ -271,6 +245,11 @@ $(<span class="pl-st">function</span>(){
 <td><code>boolean</code></td>
 <td>
 <code>true</code>:the real-time effect mode,you will have a preview box along side to see the effect, <code>false</code>:the button-preview mode, you will have to click the preview button to see the effect</td>
+</tr>
+<tr>
+    <td><code>upload</code></td>
+    <td><code>String</code></td>
+    <td>the url you post your files and images to. <code>default:null</code>, upload function is disabled in this situation.</td>
 </tr>
 <tr>
 <td><code>textHeight</code></td>
