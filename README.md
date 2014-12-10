@@ -8,6 +8,7 @@ Author:suemi
 
 ###Our Features
 Bold ones are the new features in version 0.0.2.
+
 - A toolbar including most of your need
 
 	1.**Multiple files upload and a progress bar when files are large enough**
@@ -17,7 +18,7 @@ Bold ones are the new features in version 0.0.2.
 	3.**A help page for markdown grammar**
 
 	4.one line code
-	
+
 	5.Quickly add link
 
 	6.Italic,Bold,Quote and Header
@@ -27,11 +28,17 @@ Bold ones are the new features in version 0.0.2.
 	8.preview button
 
 - **Drag images directly to add them to your article**
+
 - hot-keys doing all what you can do through the toolbar
+
 - multi-line code can be present perfectly
+
 - code highlight, different colors of different languages
+
 - enabled tab-indent in editor
+
 - two modes--real-time effect presented and click button to preview
+
 - easy to design your own UI
 
 ###Directory Structure
