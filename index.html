@@ -43,10 +43,9 @@
                $('#editor1 textarea').val(data);
                $('#editor1 .suPreview').html(marked(data));
 
-           },'text').done(function(){
+           },'text').always(function(){
                $.get('examples/editor2.md',function(data){
                    $('#editor2 textarea').val(data);
-
                },'text');
            });
 
