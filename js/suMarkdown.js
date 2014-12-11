@@ -398,7 +398,7 @@ var SuMarkdown=function(option){
                return $('textarea',mark);
            },
            plus:function(){
-               $('.su-toolbar .su-tool-upload').click();
+               $('.su-toolbar .su-tool-upload',mark).click();
                return $('textarea',mark);
            }
 
